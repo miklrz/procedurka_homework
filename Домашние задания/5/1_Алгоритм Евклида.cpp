@@ -9,14 +9,13 @@ int main() {
 	int max = (num1 < num2) ? num2 : num1;
 	int min = (num1 > num2) ? num2 : num1;
 	while (true) {
-		if (max % min == 0) {
-			cout << "мнд: " + min;
+		if (max - min == 0) {
+			cout << "мнд: " << max;
 			break;
 		}
 		else {
-			max = max % min;
-			cout << max << " " << min << endl;
+			max = max - min;
 		}
 	}
-
+	return 0;
 }
