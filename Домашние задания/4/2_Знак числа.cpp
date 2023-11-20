@@ -16,6 +16,7 @@ int sign(int x) {
 int main() {
 	setlocale(LC_ALL, "rus");
 	int num; 
+	cout << "¬ведите число: ";
 	if (!(cin >> num)) {
 		cout << "¬ведите переменную типа int";
 		return 0;

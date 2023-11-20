@@ -29,7 +29,7 @@ int main() {
 			summ += stoi(line);
 		}
 	}
-	cout << summ;
+	cout <<"Сумма чисел: " <<  summ;
 	return 0;
 		
 }
