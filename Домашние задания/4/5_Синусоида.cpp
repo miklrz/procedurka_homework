@@ -1,31 +1,44 @@
 #include <iostream>
-#include <cmath>
+#include <vector>
 #include <Windows.h>
 
 using namespace std;
 
+
 int main()
 {
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
-    GetConsoleScreenBufferInfo(handle, &consoleInfo);
-    int height = consoleInfo.srWindow.Bottom - consoleInfo.srWindow.Top + 1;
-    int width = consoleInfo.srWindow.Right - consoleInfo.srWindow.Left + 1;
+    int size = 100;
+    int height = 21;
 
-    auto GetX = [&](double x) { return int(x / 7 * width); };
-    auto GetY = [&](double y) { return int((-y / 1 + 1) * (height / 2)); };
+    vector<string> sinGraph(height, string(size, ' '));
+    sinGraph[height / 2] = string(size, '-');
 
-    _COORD c;
-    for (double i = 0; i < 7; i += 0.02)
+    for (int i = 0; i < size; i++)
     {
-        c.X = GetX(i);
-        c.Y = GetY(sin(i));
-        SetConsoleCursorPosition(handle, c);
-        cout << '*';
+        sinGraph[(round(10 * sin(i / 4.5) + 10))][i] = '*';
     }
 
-    cin.get();
-    CloseHandle(handle);
-
-    return 0;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (sinGraph[i][j] == '*' && sinGraph[i][j + 1] == '*' && sinGraph[i][j + 2] == '*')
+            {
+                sinGraph[i][j] = ' ';
+                sinGraph[i][j + 2] = ' ';
+            }
+            if (sinGraph[i][j] == '*' && sinGraph[i][j + 1] == '*')
+            {
+                sinGraph[i][j + 1] = ' ';
+            }
+            if (i != 10 && j == 14)
+            {
+                sinGraph[i][j] = '|';
+            }
+        }
+    }
+    for (auto s : sinGraph)
+    {
+        cout << s << '\n';
+    }
 }
