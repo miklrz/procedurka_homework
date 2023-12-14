@@ -30,26 +30,22 @@ int main() {
 	cout << "Введите римское число: ";
 	if (!(cin >> number)) { cout << "Введите корректные данные!"; return 0; }
 	int summ = 0;
-	if (!(exist(number))) {
+	if ((exist(number)) == false) {
 		cout << "Не существует!";
 		return 0;
 	}
-	for (int i = 0; i < number.size(); ++i) {
-		cout << number[i] << " " << number[i - 1] << "\n----------------------";
-		int a = to_int(number[i]);
-		if (i == number.size()) {
-			summ += a;
-			break;
-		}
-		int b = to_int(number[i + 1]);
-		}
+	for (int i = 1; i < number.size(); ++i) {
+		int a = to_int(number[i - 1]);
+		int b = to_int(number[i]);
 		if (a < b) {
-			summ -= to_int(a);
-			cout << to_int(a) <<" 1 " << endl;
+			summ -= a;
 		}
 		else {
-			summ += to_int(a);
-			cout << to_int(a) << " 2 " << endl;
+			summ += a;
+		}
+		if (i == number.size() - 1) {
+			summ += b;
+			break;
 		}
 	}
 	cout << summ;
