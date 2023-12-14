@@ -8,12 +8,12 @@ float tr() {
 	float answ;
 	float a, h;
 	cout << "¬ведите a: ";
-	if (!(cin >> a)) {
+	if (!(cin >> a) || a <=0) {
 		cout << "¬ведите корректные данные!";
 		return 0;
 	}
 	cout << "¬ведите h: ";
-	if (!(cin >> h)) {
+	if (!(cin >> h) || h<=0) {
 		cout << "¬ведите корректные данные!";
 		return 0;
 	}
@@ -26,12 +26,12 @@ float pr() {
 	float a, b;
 	float answ;
 	cout << "¬ведите a: ";
-	if (!(cin >> a)) {
+	if (!(cin >> a) || a<=0) {
 		cout << "¬ведите корректные данные!";
 		return 0;
 	}
 	cout << "¬ведите b: ";
-	if (!(cin >> b)) {
+	if (!(cin >> b) || b <=0) {
 		cout << "¬ведите корректные данные!";
 		return 0;
 	}
@@ -43,7 +43,7 @@ float pr() {
 float circ() {
 	float r, answ; 
 	cout << "¬ведите r: ";
-	if (!(cin >> r)) {
+	if (!(cin >> r) || r<=0) {
 		cout << "¬ведите корректные данные!";
 		return 0;
 	}

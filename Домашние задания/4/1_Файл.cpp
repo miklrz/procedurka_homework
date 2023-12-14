@@ -8,11 +8,11 @@ int main() {
 	ofstream out;
 	out.open("f1.txt");
 	if (out.is_open()) {
-		
+		cout << "¬ведите 10 чисел: ";
 		for (int i = 0; i < 10; ++i) {
-			int a; 
+			float a;
 			if (!(cin >> a)) {
-				cout << "¬ведите целое число!";
+				cout << "¬ведите корректные данные!";
 				return 0;
 			}
 			out << a << endl;
@@ -20,13 +20,13 @@ int main() {
 	}
 	out.close();
 
-	int summ = 0;
+	float summ = 0.;
 	ifstream in;
 	string line;
 	in.open("f1.txt");
 	if (in.is_open()) {
 		while (getline(in, line)) {
-			summ += stoi(line);
+			summ += stof(line);
 		}
 	}
 	cout <<"—умма чисел: " <<  summ;
