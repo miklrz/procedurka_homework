@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    //1
+    //1 текст
     string line;
     string text = "";
     char symbol = '*';
