@@ -1,20 +1,32 @@
 #include <iostream>
 using namespace std;
-
-int main() {
-	int N, K;
-	cout << "Введите N: "; if (!(cin >> N)) { cout << "Введите корректные данные!"; return 1; }
-	cout << "Введите K: "; if (!(cin >> K)) { cout << "Введите корректные данные!"; return 1; }
-	bool m[1000];
-	m[0] = true;
-	m[11] = true;
-	int max_len = 10;
-	for (int i = 0; i < K; ++i) {
-		int mesto;
-		if (max_len % 2 == 1) {
-			mesto = max_len 
-		}
-	}
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    int n, k;
+    cout << "Введите N мест : ";
+    if (!(cin >> n) || n < 0)
+    {
+        cout << "Введите корректные данные!";
+        return 0;
+    }
+    if (n == 0)
+    {
+        cout << "Мест нет";
+        return 0;
+    }
+    cout << "Введите K школьников : ";
+    if (!(cin >> k) || k<=0 || n < k)
+    {
+        cout << "Введите корректные данные!";
+        return 0;
+    }
+    while (k != 1)
+    {
+        n = (n - k % 2) / 2;
+        k /= 2;
+    }
+    cout << "Количество свободных мест слева: " << (n - 1) / 2 << endl;
+    cout << "Количество свободных мест справа: " << n / 2 << endl;
+    return 0;
 }
-
-// 1 _ _ _ _ _ _ _ _ _ _ 1 
