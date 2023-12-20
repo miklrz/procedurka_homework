@@ -3,9 +3,10 @@
 using namespace std;
 
 int main() {
+	// 1 р€ды
 	setlocale(LC_ALL, "rus");
 	int n; cout << "¬ведите n: ";
-	if (!(cin >> n)) {
+	if (!(cin >> n) || n < 1) {
 		cout << "¬ведите корректные данные!";
 		return 1;
 	}

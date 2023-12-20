@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+    // 34 текст
     setlocale(LC_ALL, "rus");
     string substring;
 

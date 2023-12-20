@@ -54,9 +54,8 @@ int main() {
 	cout << "Введите число: ";
 	string num; cin >> num;
 	cout << "Введите исходную систему счисления: ";
-	int from; if (!(cin >> from)) { cout << "Введите корректные данные!"; return 0;}
+	int from; if (!(cin >> from) || exist(num, from) == false) { cout << "Введите корректные данные!"; return 0;}
 	cout << "Введите конечную систему счисления: ";
 	int to; if (!(cin >> to)) { cout << "Введите корректные данные!"; return 0; }
-	if (exist(num, from) == false) { cout << "Введите корректные данные!"; return 0; }
 	cout << "Конечное число в " << to << " системе счисления: " << convert_base(from, to, num);
 }

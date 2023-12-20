@@ -5,8 +5,10 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "rus");
+	setlocale(LC_NUMERIC, "C");
 	ofstream out;
 	out.open("f1.txt");
+	float summ = 0;
 	if (out.is_open()) {
 		cout << "¬ведите 10 чисел: ";
 		for (int i = 0; i < 10; ++i) {
@@ -19,17 +21,16 @@ int main() {
 		}
 	}
 	out.close();
-
-	float summ = 0.;
 	ifstream in;
 	string line;
 	in.open("f1.txt");
 	if (in.is_open()) {
 		while (getline(in, line)) {
-			summ += stof(line);
+			float a= stof(line);
+			summ += a;
 		}
 	}
-	cout <<"—умма чисел: " <<  summ;
+	cout << "—умма чисел: " << summ;
 	return 0;
-		
+
 }
