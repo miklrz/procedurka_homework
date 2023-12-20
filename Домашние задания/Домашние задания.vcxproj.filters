@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="5\4_1.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="Шарики\Source.cpp">
+      <Filter>Файлы заголовков</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
