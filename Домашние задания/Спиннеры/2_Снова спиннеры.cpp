@@ -2,20 +2,65 @@
 using namespace std;
 
 int main() {
+    setlocale(0, "");
+    int M, L3, L4;
+    cout << "Введите M (кол-во лопастей): " ;
+    if (!(cin >> M))
+    {
+        cout << "Некорректные данные";
+        return 0;
+    }
+    if (M <= 0)
+    {
+        cout << "Некорректные данные";
+        return 0;
+    }
+    if (M <= 1)
+    {
+        L3 = 0;
+        L4 = 0;
+        cout << L3 << endl;
+        cout << L4 << endl;
+        return 0;
+    }
+    if (M % 4 == 3)
+    {
+        L3 = 1;
+        L4 = M / 4;
+        cout << L3 << endl;
+        cout << L4 << endl;
+        return 0;
+    }
+    if (M % 3 == 1)
+    {
+        L3 = M / 3 - 1;
+        L4 = 1;
+        cout << L3 << endl;
+        cout << L4 << endl;
+        return 0;
+    }
+    if (M % 4 == 0)
+    {
+        L3 = 0;
+        L4 = M / 4;
+        cout << L3 << endl;
+        cout << L4 << endl;
+        return 0;
+    }
+    if (M % 3 == 0)
+    {
+        L3 = M / 3;
+        L4 = 0;
+        cout << L3 << endl;
+        cout << L4 << endl;
+        return 0;
+    }
+    else
+    {
+        L3 = 0;
+        L4 = 0;
+        cout << L3 << endl;
+        cout << L4 << endl;
 
-	// 3 или 4 лопасти
-	// M лопастей и неограниченный запаз оснований 
-	// использовать все M лопастей
-	// любое из решений
-	
-	setlocale(LC_ALL, "rus");
-	int M; cout << "Введите количество лопастей: "; if (!(cin >> M)) { cout << "Введите корректные данные!"; return 0; }
-	int three = 0, four = 0;
-	while (M / 3 != 0) {
-		M -= 3; three += 1;
-		if (M >= 4) {
-			M -= 4; four += 1;
-		}
-	}
-	cout << three << endl << four;
+    }
 }
